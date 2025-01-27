@@ -1,0 +1,14 @@
+pull theme from .toml environment variable conyaining link of store: 
+[environments.development]
+store="https://theme-for-me.myshopify.com/"
+
+command: shopify theme pull -e development
+
+run theme locally 
+command: shopify theme dev -e development
+
+push theme
+command: shopify theme push -e development
+
+command to pull theme changes from development theme customization
+command: shopify theme pull -d
