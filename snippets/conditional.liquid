@@ -1,0 +1,50 @@
+ {% comment %} Conditional if-else, case {% endcomment %}
+
+ {% assign num = 111 %}
+
+ {% if num > 10 and num < 100 %}
+    <p>num is greater than 10</p>
+ {% elsif num > 100 %}
+    <p>num is greater than 100</p>
+ {% else %}
+    <p>anni dea num</p> 
+ {% endif %}
+ <br />
+
+ {% assign str = "hello" %}
+
+ {% if str == "hello" %}
+    String is hello
+ {% else %}
+    String is not hello
+ {% endif %}
+ <br />
+
+ {% assign str_world = "hello world" %}
+
+ {% if str_world contains "world" %}
+    String contains world
+ {% endif %}
+ <br />
+ 
+ {% if product.tags contains "Winter" %}
+    this product is for winter
+{% endif %}
+<br />
+
+{% unless product.tags contains "Winter" %}
+    this product does not contain winter tag
+    {% else %}
+    this product contain winter tag
+{% endunless %}
+<br />
+
+{% assign case_str = "hello" %}
+{% case case_str %}
+    {% when "hello" %}
+        value is hello
+    {% when "world" %}
+        value is world
+    {% else %}
+        value is neither hello nor world
+{% endcase %}

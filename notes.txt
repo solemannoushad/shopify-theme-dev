@@ -1,0 +1,24 @@
+render a snippet
+{% render 'snippet_name' %} - for abc.liquid snippet_name will be 'abc' - Must be inside snippet folder
+
+declaring and printing variable
+ {%- assign my_variable = "Hello World" -%} - declaring
+ {{- my_variable -}} - printing
+
+ Data Types
+ . String - {% assign my_string = "String Data Type" %} - length of string {{ my_string.size }}
+ . Number - {% assign my_number = 31 %} - {% assign my_floating_number = 31.31 %}
+ . Boolean - {% assign my_boolean = true %} - output will be true not 1
+ . Nil - {% assign my_nil = nil %}
+ . Array - {{ product.tags[0] }} - we can't declare an array in liquid, but use build-in arrays liquid provides to us - for array length {{ product.tags.size }}
+ . Object - product, collection, cart, checkout, etc
+
+ Another way of Declaring variables
+  {% capture html %}
+    <div>
+        <p>Product title - {{ product.title }}</p>
+    </div>
+ {% endcapture %}
+ {{ html }}
+
+ If you want to check if string is empty or not we can de string != blank

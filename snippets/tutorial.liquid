@@ -1,0 +1,50 @@
+{% comment %} <p>Hello from tutorial.liquid</p> {% endcomment %}
+ {%- assign my_variable = "Hello World" -%}
+ {{- my_variable -}}
+ <br />
+ 
+ {% assign my_string = "String Data Type" %}
+ {{ my_string }} , {{ my_string.size }}
+ <br />
+ 
+ {% assign my_number = 31 %}
+ {{ my_number }}
+ <br />
+
+ {% assign my_floating_number = 31.31 %}
+ {{ my_floating_number }}
+ <br />
+
+ {% assign my_boolean = true %}
+ {{ my_boolean }}
+ <br />
+ 
+ {% assign my_nil = nil %}
+ {{ my_nil }}
+ <br />
+ 
+ {{ product.tags[0] }}
+ <br />
+ 
+ {{ product.tags.size }}
+ <br />
+
+ {{ product.title }}
+ <br />
+ 
+ {% capture html %}
+    <div>
+        <p>Product title - {{ product.title }}</p>
+    </div>
+ {% endcapture %}
+ {{ html }}
+ <br />
+ 
+ {% assign my_products = product %}
+ {{ my_products.title }}
+ <br />
+ 
+ {% assign my_products_tags = product.tags %}
+ {{ my_products_tags }}
+ <br />
+
