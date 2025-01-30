@@ -1,6 +1,23 @@
 render a snippet
 {% render 'snippet_name' %} - for abc.liquid snippet_name will be 'abc' - Must be inside snippet folder
 
+Passing parameters in render
+
+{% render 'snippet_name' with 'Any value' %}
+{% render 'snippet_name', title: 'Any value' %}
+
+add css file from assets folder
+{{ 'tutorial.css' | asset_url | stylesheet_tag }}
+
+add js file from assets folder
+<script src="{{ 'tutorial.js' | asset_url }}" defer ></script>
+
+For large liquid code
+
+{%liquid
+  Any liquid code here without brackets and percentages - echo for printing
+%}
+
 declaring and printing variable
  {%- assign my_variable = "Hello World" -%} - declaring
  {{- my_variable -}} - printing
@@ -22,3 +39,48 @@ declaring and printing variable
  {{ html }}
 
  If you want to check if string is empty or not we can de string != blank
+
+ Filters:
+
+ Math filters:
+
+ . plus - addition
+ . minus - subtraction
+ . times - multiply
+ . divided_by - divide
+ . modulo - mod
+ . round - round fraction
+ . floor - round to floor
+ . ceil - round to ceil
+ . abs - absolute value (positive)
+ . at_most - provide at_most value if actual is greater than at_most
+ . at_lease - provide at_least value if actual is smaller than at_least
+
+ String filters:
+
+ . upcase
+ . downcase
+ . capitalize
+ . append - append string
+ . strip - removes extra whitespaces
+ . strip_html - returns text inside html tags
+ . truncate - add ... at end of specified length of characters
+ . truncatewords - add ... at end of specified length of words
+ . newline_to_br - add line breaks in paragraph
+ . replace - replace text with specified text in string
+ . replace_first
+ . replace_last
+ . remove - remove specified text from string
+ . remove_first
+ . remove_last
+
+ Array filters:
+
+ map
+ join
+ reverse
+ first
+ last
+ size
+ sort
+ where

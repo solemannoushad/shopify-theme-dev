@@ -1,4 +1,4 @@
-{% for product in collection.products limit: 5 offset: 1 %}
+{% for product in collection.products limit: 5 offset: 2 %}
     <p style="font-weight: bold;
             {% if forloop.first %}
                 color: green
@@ -17,4 +17,14 @@
         {% endfor %}
     {% endif %}
     
+{% endfor %}
+
+{% for i in (5..13) %}
+    {% if i == 7 %}
+        {% continue %}
+    {% endif %}
+    {% if i == 12 %}
+        {% break %}
+    {% endif %}
+    {{ i }}
 {% endfor %}

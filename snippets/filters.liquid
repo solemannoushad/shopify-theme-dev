@@ -1,0 +1,57 @@
+{{ 'tutorial.css' |  asset_url | stylesheet_tag }}
+
+<h1>Filters</h1>
+<h2>Math filters</h2>
+
+{% assign num = 10 %}
+{{ num |  plus: 5 }}
+{{ num |  minus: 5 }}
+{{ num |  times: 5 }}
+{{ num |  divided_by: 5 }}
+
+{% assign new_num = num |  plus: 50 %}
+{{ new_num }}
+
+<h2>String to number</h2>
+
+{% assign string_num = '20' %}
+{% assign conversion = string_num |  plus: 0 %}
+{{ conversion }}
+
+{% if conversion == 20 %}
+    Number is 20
+{% endif %}
+
+<h2>Modulus</h2>
+
+{% assign mod = string_num |  modulo: 2 %}
+{% if mod == 0 %}
+    Even
+{% else %}
+    Odd
+{% endif %}
+
+<h1>String filters</h1>
+
+{% assign str = "HELLO world" %}
+{% assign new_str = " New One" %}
+
+{{ str |  upcase }}, 
+{{ str |  downcase }}, 
+{{ str |  capitalize }}, 
+{{ str |  append : new_str }}, 
+{% assign long = "This is a very long string containing lots of characters same as a product description" %}
+{{ long | truncate: 15 }}
+{{ long | truncate: 15 , '???' }}
+{{ long | truncatewords: 5 }}
+{% assign diff_lines_str = "
+first line
+second line
+third line
+" %}
+
+{{ diff_lines_str | newline_to_br }}
+
+{{ long |  highlight: "long" }}
+
+<script src="{{ 'tutorial.js' | asset_url }}" defer ></script>
